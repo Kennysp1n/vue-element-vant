@@ -1,12 +1,9 @@
 <template>
   <div class="home">
-    <slide-nav />
-    <div class="content">
-      <div class="img-container">
-        <el-image :src="src" alt="iphone6" fit="fill"></el-image>
-        <div class="display-area">
-          <phone class="my-phone"></phone>
-        </div>
+    <div class="home-container">
+      <aside-nav />
+      <div class="main-container">
+        <main-content />
       </div>
     </div>
   </div>
@@ -14,71 +11,37 @@
 
 <script>
 // @ is an alias to /src
-import SlideNav from '../components/SlideNav'
-import Phone from '../components/Phone'
-import { mapState, mapMutations } from 'vuex'
-import iphone6 from '../assets/iphone6.jpg'
+import AsideNav from '../components/AsideNav'
+import MainContent from '../components/MainContent'
 export default {
   name: 'home',
-  data () {
-    return {
-      src: iphone6
-    }
-  },
-  computed: {
-
-  },
-  methods: {
-  },
   components: {
-    SlideNav, Phone
-  },
-  mounted () {
+    AsideNav, MainContent
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .home {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: 100%;
-  padding-top: 10px;
-  background-color: #f6f6f6;
-  .slide-nav {
-    flex: 1;
-    margin-left: 5px;
-    margin-right: 20px;
-  }
-  .content {
-    flex: 5;
-    margin-right: 20px;
-    width: 80%;
-    height: 90%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  .home-container {
+    width: 800px;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    .img-container {
-      position: relative;
-      .el-image {
-        z-index: 1;
-        width: 375px;
-        height: 667px;
-      }
-      .display-area {
-        position: absolute;
-        top: 81px;
-        left: 21px;
-        z-index: 2;
-        width: 336px;
-        height: 508px;
-        background-color: white;
-        border: 1px solid black;
-      }
+    .main-container {
+      width: 500px;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

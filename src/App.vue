@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <top-nav />
-    <router-view />
+    <router-view class="my-router-view" />
   </div>
 </template>
 
@@ -16,21 +16,28 @@ export default {
 
 <style lang="scss">
 html {
-  height: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
   body {
-    height: 100%;
     margin: 0;
     padding: 0;
+    height: 100%;
     #app {
       margin: 0;
       padding: 0;
+      height: 100%;
       font-family: "Avenir", Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      height: 100%;
-      width: 100%;
+      background-color: #f6f6f6;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      .my-router-view {
+        //router-view页面占据全部剩余空间
+        flex: auto;
+      }
     }
   }
 }
