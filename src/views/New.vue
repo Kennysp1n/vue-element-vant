@@ -1,15 +1,13 @@
 <template>
-  <div class="content">
-    
-  </div>
+  <div>some text</div>
 </template>
 
 <script>
 export default {
-
+  name: 'new'
 }
 </script>
 
-<style lang="scss">
+<style>
 
 </style>

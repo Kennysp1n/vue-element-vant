@@ -1,8 +1,8 @@
 <template>
   <div class="top-nav">
-    <el-menu mode="horizontal">
-      <el-menu-item index="1">顶部导航1</el-menu-item>
-      <el-menu-item index="2">顶部导航2</el-menu-item>
+    <el-menu mode="horizontal" default-active="1" :router="true">
+      <el-menu-item index="1" :route="index1Route">顶部导航1</el-menu-item>
+      <el-menu-item index="2" :route="index2Route">顶部导航2</el-menu-item>
       <el-menu-item index="3">顶部导航3</el-menu-item>
       <el-submenu index="4">
         <template slot="title">顶部导航4</template>
@@ -28,7 +28,16 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      index1Route: {
+        path: '/home'
+      },
+      index2Route: {
+        path: '/new'
+      }
+    }
+  }
 }
 </script>
 

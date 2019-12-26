@@ -1,6 +1,6 @@
 <template>
-  <div class="slide-nav">
-    <el-menu default-active="1-1" @close="handleClose" id="slide-nav-menu">
+  <div class="aside-nav">
+    <el-menu default-active="1-1">
       <el-submenu index="1">
         <template slot="title">移动端展示</template>
         <el-menu-item-group>
@@ -24,19 +24,15 @@
 <script>
 
 export default {
-  computed: {
-  },
-  methods: {
-    handleClose (index, indexPath) {
 
-    }
-  }
 }
 </script>
 
 <style lang="scss">
-.slide-nav {
+.aside-nav {
+  min-width: 205px;
   .el-menu {
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
   }
 }
