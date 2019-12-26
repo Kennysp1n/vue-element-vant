@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <top-nav />
-    <router-view />
+    <home />
+    <!-- <router-view /> -->
   </div>
 </template>
 
 <script>
 import TopNav from './components/TopNav'
+import Home from './views/Home'
 export default {
   components: {
-    TopNav
+    TopNav,Home
   }
 }
 </script>
